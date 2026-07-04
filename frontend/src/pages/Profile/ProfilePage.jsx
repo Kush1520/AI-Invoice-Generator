@@ -5,8 +5,8 @@ import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import toast from "react-hot-toast";
 
-import InputField from "../../components/UI/inputField";
-import TextareaField from "../../components/UI/TextAreaField";
+import InputField from "../../components/ui/inputField";
+import TextareaField from "../../components/ui/TextAreaField";
 
 const ProfilePage = () => {
   const { user, loading, updateUser } = useAuth();
