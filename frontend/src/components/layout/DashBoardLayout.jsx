@@ -1,4 +1,3 @@
-// DashboardLayout.jsx
 import { useState, useEffect } from "react";
 import CreateInvoice from "../../pages/invoices/CreateInvoices";
 import AllInvoices from "../../pages/invoices/AllInvoices";
@@ -62,11 +61,11 @@ const DashboardLayout = () => {
     : "U";
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden">
+    <div className="flex h-screen bg-zinc-950 transition-colors duration-300 overflow-hidden">
 
       {isMobile && sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -74,7 +73,7 @@ const DashboardLayout = () => {
       {/* SIDEBAR */}
       <aside
         className={`
-          fixed inset-y-0 left-0 z-50 bg-white border-r border-gray-100 flex flex-col
+          fixed inset-y-0 left-0 z-50 bg-zinc-900 border-r border-zinc-800/80 flex flex-col
           transition-all duration-300 ease-in-out
           ${sidebarCollapsed && !isMobile ? "w-[72px]" : "w-64"}
           ${isMobile
@@ -83,16 +82,16 @@ const DashboardLayout = () => {
           }
         `}
       >
-        <div className="h-16 flex items-center justify-between px-4 border-b border-gray-100 shrink-0">
+        <div className="h-16 flex items-center justify-between px-4 border-b border-zinc-850 shrink-0">
           {(!sidebarCollapsed || isMobile) && (
             <button
               onClick={() => (window.location.href = "/")}
               className="flex items-center gap-2.5 cursor-pointer"
             >
-              <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center">
-                <FileText className="w-3.5 h-3.5 text-white" />
+              <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center shadow-md shadow-blue-500/10">
+                <FileText className="w-4 h-4 text-white" />
               </div>
-              <span className="font-bold text-gray-900 text-sm hover:text-blue-600 transition">
+              <span className="font-bold text-zinc-50 text-sm hover:text-blue-400 transition tracking-tight">
                 InvoiceAI
               </span>
             </button>
@@ -100,13 +99,13 @@ const DashboardLayout = () => {
           {!isMobile && (
             <button
               onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="w-7 h-7 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-600 transition-colors ml-auto"
+              className="w-7 h-7 rounded-lg hover:bg-zinc-800/50 flex items-center justify-center text-zinc-500 hover:text-zinc-350 transition-colors ml-auto"
             >
               <ChevronLeft className={`w-4 h-4 transition-transform ${sidebarCollapsed ? "rotate-180" : ""}`} />
             </button>
           )}
           {isMobile && (
-            <button onClick={() => setSidebarOpen(false)} className="text-gray-400 hover:text-gray-600 ml-auto">
+            <button onClick={() => setSidebarOpen(false)} className="text-zinc-500 hover:text-zinc-350 ml-auto">
               <X className="w-5 h-5" />
             </button>
           )}
@@ -122,27 +121,27 @@ const DashboardLayout = () => {
                 title={sidebarCollapsed && !isMobile ? name : undefined}
                 className={`
                   relative w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm
-                  transition-all duration-150 group
+                  transition-all duration-150 group cursor-pointer
                   ${isActive
-                    ? "bg-blue-50 text-blue-700 font-medium"
-                    : "text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                    ? "bg-blue-950/40 text-blue-400 font-semibold"
+                    : "text-zinc-400 hover:bg-zinc-800/40 hover:text-zinc-200"
                   }
                 `}
               >
                 {isActive && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-blue-600 rounded-r-full" />
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-blue-500 rounded-r-full" />
                 )}
-                <Icon className={`w-[18px] h-[18px] shrink-0 ${isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-500"}`} />
+                <Icon className={`w-[18px] h-[18px] shrink-0 ${isActive ? "text-blue-400" : "text-zinc-500 group-hover:text-zinc-300"}`} />
                 {(!sidebarCollapsed || isMobile) && <span>{name}</span>}
               </button>
             );
           })}
         </nav>
 
-        <div className="p-3 border-t border-gray-100 shrink-0">
+        <div className="p-3 border-t border-zinc-855 shrink-0">
           <button
             onClick={logout}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-zinc-500 hover:bg-red-950/20 hover:text-red-400 transition-colors cursor-pointer"
           >
             <LogOut className="w-[18px] h-[18px] shrink-0" />
             {(!sidebarCollapsed || isMobile) && "Logout"}
@@ -157,34 +156,36 @@ const DashboardLayout = () => {
           ${isMobile ? "ml-0" : sidebarCollapsed ? "ml-[72px]" : "ml-64"}
         `}
       >
-        <header className="h-16 bg-white border-b border-gray-100 flex items-center justify-between px-6 shrink-0 z-30">
+        <header className="h-16 bg-zinc-900/80 backdrop-blur-md border-b border-zinc-800/80 flex items-center justify-between px-6 shrink-0 z-30 transition-colors duration-300">
           <div className="flex items-center gap-3">
             {isMobile && (
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="w-9 h-9 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 transition-colors"
+                className="w-9 h-9 rounded-lg hover:bg-zinc-800 flex items-center justify-center text-zinc-400 transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>
             )}
-            <h1 className="text-sm font-semibold text-gray-900">
+            <h1 className="text-sm font-bold text-zinc-50">
               {PAGE_TITLES[activeNavItem] ?? activeNavItem}
             </h1>
           </div>
 
-          <ProfileDropdown
-            isOpen={profileDropdownOpen}
-            onToggle={() => setProfileDropdownOpen((v) => !v)}
-            avatar={initials}
-            companyName={user?.name ?? ""}
-            email={user?.email ?? ""}
-            onLogout={logout}
-            onViewProfile={() => navigate("profile")}
-          />
+          <div className="flex items-center gap-4">
+            <ProfileDropdown
+              isOpen={profileDropdownOpen}
+              onToggle={() => setProfileDropdownOpen((v) => !v)}
+              avatar={initials}
+              companyName={user?.name ?? ""}
+              email={user?.email ?? ""}
+              onLogout={logout}
+              onViewProfile={() => navigate("profile")}
+            />
+          </div>
         </header>
 
         {/* CONTENT */}
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 p-6 overflow-y-auto bg-transparent">
           {activeNavItem === "dashboard"      && <Dashboard onNavigate={navigate} />}
           {activeNavItem === "invoices"       && <AllInvoices onNavigate={navigate} />}
           {activeNavItem === "recurring"      && <RecurringPage />}

@@ -10,15 +10,15 @@ const FaqItem = ({ faq, isOpen, onClick }) => {
   }, [isOpen]);
 
   return (
-    <div className={`border rounded-xl overflow-hidden transition-colors duration-200 ${
-      isOpen ? 'border-gray-300' : 'border-gray-200'
+    <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+      isOpen ? 'border-zinc-700 shadow-sm' : 'border-zinc-800/80'
     }`}>
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between p-6 bg-white hover:bg-gray-50 cursor-pointer transition-colors duration-200"
+        className="w-full flex items-center justify-between p-6 bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-md cursor-pointer transition-colors duration-300"
       >
-        <span className={`text-base font-medium text-left pr-4 transition-colors duration-200 ${
-          isOpen ? 'text-gray-900' : 'text-gray-500'
+        <span className={`text-base font-semibold text-left pr-4 transition-colors duration-300 ${
+          isOpen ? 'text-zinc-100' : 'text-zinc-400'
         }`}>
           {faq.question}
         </span>
@@ -26,12 +26,12 @@ const FaqItem = ({ faq, isOpen, onClick }) => {
         {/* Plus / minus icon */}
         <span className="flex-shrink-0 w-5 h-5 relative">
           <span className="absolute inset-0 flex items-center justify-center">
-            <span className="block w-3 h-px bg-gray-400" />
+            <span className="block w-3 h-px bg-zinc-500" />
           </span>
           <span className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
             isOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
           }`}>
-            <span className="block w-px h-3 bg-gray-400" />
+            <span className="block w-px h-3 bg-zinc-500" />
           </span>
         </span>
       </button>
@@ -39,11 +39,11 @@ const FaqItem = ({ faq, isOpen, onClick }) => {
       {/* Animated answer panel */}
       <div
         style={{ height, transition: 'height 0.3s ease' }}
-        className="overflow-hidden"
+        className="overflow-hidden bg-zinc-900/20 backdrop-blur-md"
       >
         <div
           ref={answerRef}
-          className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4"
+          className="px-6 pb-6 text-zinc-450 leading-relaxed border-t border-zinc-800/80 pt-4 text-sm sm:text-base"
         >
           {faq.answer}
         </div>
@@ -60,13 +60,13 @@ const Faqs = () => {
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-white">
+    <section id="faq" className="py-20 lg:py-28 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-            Frequently asked questions
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-50 mb-4 capitalize">
+            Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
             Everything you need to know about the product and billing.
           </p>
         </div>
