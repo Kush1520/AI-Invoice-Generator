@@ -4,7 +4,6 @@ import { FileText, Menu, X } from 'lucide-react'
 import ProfileDropdown from "../layout/ProfileDropDown";
 import Button from "../ui/Button";
 import { useAuth } from "../../context/authContext";
-import ThemeToggle from "../ui/ThemeToggle";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -53,8 +52,7 @@ const Header = () => {
 
                     {/* Desktop Right Side */}
                     <div className="hidden lg:flex items-center space-x-5">
-                        <ThemeToggle />
-                        
+
                         {isAuthenticated ? (
                             <ProfileDropdown
                                 isOpen={ProfileDropdownOpen}
@@ -81,7 +79,7 @@ const Header = () => {
 
                     {/* Mobile Controls */}
                     <div className="lg:hidden flex items-center space-x-3">
-                        <ThemeToggle />
+
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="p-2 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors duration-200"

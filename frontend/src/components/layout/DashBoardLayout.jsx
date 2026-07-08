@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { useAuth } from "../../context/authContext";
 import ProfileDropdown from "../../components/layout/ProfileDropDown";
-import ThemeToggle from "../../components/ui/ThemeToggle";
 
 const NAVIGATION_MENU = [
   { id: "dashboard",  name: "Dashboard",     icon: LayoutDashboard },
@@ -173,8 +172,6 @@ const DashboardLayout = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <div className="w-px h-5 bg-slate-200 dark:bg-zinc-800"></div>
             <ProfileDropdown
               isOpen={profileDropdownOpen}
               onToggle={() => setProfileDropdownOpen((v) => !v)}

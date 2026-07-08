@@ -6,7 +6,6 @@ import axiosInstance from "../../utils/axiosInstance";
 import { useNavigate, Link } from "react-router-dom";
 import { validateEmail, validatePassword } from "../../utils/helper";
 import { DottedSurface } from "../../components/ui/dotted-surface";
-import ThemeToggle from "../../components/ui/ThemeToggle";
 
 const SignUp = () => {
   const { login } = useAuth();
@@ -161,10 +160,6 @@ const SignUp = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-zinc-950 px-4 relative overflow-hidden transition-colors duration-300">
       
-      {/* Floating Theme Switcher at Top Right */}
-      <div className="absolute top-6 right-6 z-20">
-        <ThemeToggle />
-      </div>
 
       {/* ThreeJS Background Backdrop */}
       <DottedSurface className="opacity-70 dark:opacity-100" />
