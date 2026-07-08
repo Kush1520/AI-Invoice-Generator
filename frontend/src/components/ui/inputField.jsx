@@ -21,7 +21,7 @@ const InputField = ({ icon: Icon, label, name, ...props }) => {
           id={name}
           name={name}
           {...props}
-          className={`w-full h-10 pr-3 py-2 border border-slate-200 rounded-lg bg-white ${
+          className={`w-full h-10 pr-3 py-2 border border-slate-200 rounded-lg bg-white text-zinc-950 ${
             Icon ? "pl-10" : "pl-3"
           }`}
         />

@@ -192,7 +192,7 @@ const CreateInvoice = ({ invoiceData = null, onNavigate }) => {
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n || 0);
 
   const inputCls =
-    "w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-400 transition-all bg-white";
+    "w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-400 transition-all bg-white text-zinc-950";
   const labelCls = "block text-xs font-medium text-gray-500 mb-1";
 
   return (
@@ -204,12 +204,12 @@ const CreateInvoice = ({ invoiceData = null, onNavigate }) => {
           <button
             type="button"
             onClick={() => onNavigate("invoices")}
-            className="w-9 h-9 rounded-lg hover:bg-gray-100 flex items-center justify-center text-gray-500 transition-colors"
+            className="w-9 h-9 rounded-lg hover:bg-zinc-800 flex items-center justify-center text-zinc-400 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
           </button>
           <div>
-            <h2 className="text-lg font-bold text-gray-900">
+            <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-50">
               {existingInvoice ? "Edit Invoice" : aiPrefill ? "AI Generated Invoice" : "Create Invoice"}
             </h2>
             <p className="text-sm text-gray-400">
