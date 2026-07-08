@@ -2,29 +2,23 @@
  
 A full-stack invoice management platform that uses AI to turn plain-English descriptions into structured, professional invoices — plus recurring billing, AI-generated payment reminders, and a smart dashboard with data-driven insights.
  
-**Live demo:** [ai-powered-invoice-generator-jx5c.vercel.app](https://ai-powered-invoice-generator-jx5c.vercel.app)
+**Live demo:** [ai-invoice-generator-nine-beryl.vercel.app](https://ai-invoice-generator-nine-beryl.vercel.app)
  
 ---
 
-Screenshots
-[Home Page]
-<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/1e459956-02f5-4a2a-ad6f-d576c8686f09" />
+## Overview
 
+[Dashboard]
+<img width="1200" height="700" alt="Dashboard Screenshot" src="screenshots/dashboard.png" />
 
-[DashBoard]
-<img width="1200" height="700" alt="image" src="screenshots/dashboard.png" />
-
+[All Invoices]
+<img width="1200" height="700" alt="All Invoices Screenshot" src="screenshots/all_invoices.png" />
 
 [Create Invoice]
-<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/5d30dabf-9f36-47c8-8d13-3c3f71b0f39c" />
-
+<img width="1200" height="700" alt="Create Invoice Screenshot" src="screenshots/create_invoice.png" />
 
 [Profile Page]
-<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/7a5f5914-e9c6-4c06-9a8f-47ae257237a0" />
-
-
-[ALL Invoices]
-<img width="2524" height="1102" alt="image" src="https://github.com/user-attachments/assets/178ac8c6-d1f7-40fd-af1a-7a3bbd9de977" />
+<img width="1200" height="700" alt="Profile Page Screenshot" src="screenshots/profile.png" />
 
 
 ## Features
@@ -83,8 +77,8 @@ Screenshots
 - A [Groq API key](https://console.groq.com/keys)
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/AvinashGhai/AI-Powered-Invoice-Generator.git
-cd AI-Powered-Invoice-Generator
+git clone https://github.com/Kush1520/AI-Invoice-Generator.git
+cd AI-Invoice-Generator
 ```
  
 ### 2. Backend setup
@@ -164,10 +158,4 @@ AI-Powered-Invoice-Generator/
 - [ ] httpOnly cookie-based auth (instead of localStorage JWT)
 - [ ] Natural-language invoice search/filtering
 ---
- 
- 
-## Author
- 
-**Avinash Ghai**
-[GitHub](https://github.com/AvinashGhai)
 
