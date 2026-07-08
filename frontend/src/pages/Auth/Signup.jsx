@@ -6,6 +6,7 @@ import axiosInstance from "../../utils/axiosInstance";
 import { useNavigate, Link } from "react-router-dom";
 import { validateEmail, validatePassword } from "../../utils/helper";
 import { DottedSurface } from "../../components/ui/dotted-surface";
+import ThemeToggle from "../../components/ui/ThemeToggle";
 
 const SignUp = () => {
   const { login } = useAuth();
@@ -158,27 +159,33 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-950 px-4 relative overflow-hidden transition-colors duration-300">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-zinc-950 px-4 relative overflow-hidden transition-colors duration-300">
+      
+      {/* Floating Theme Switcher at Top Right */}
+      <div className="absolute top-6 right-6 z-20">
+        <ThemeToggle />
+      </div>
+
       {/* ThreeJS Background Backdrop */}
-      <DottedSurface className="opacity-100" />
+      <DottedSurface className="opacity-70 dark:opacity-100" />
       
       {/* Floating Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
-        <div className="absolute top-[10%] left-[15%] w-[380px] h-[380px] rounded-full bg-blue-650/5 blur-[120px] animate-float-slow" />
-        <div className="absolute bottom-[25%] right-[8%] w-[480px] h-[480px] rounded-full bg-indigo-650/5 blur-[130px] animate-float-reverse" />
+        <div className="absolute top-[10%] left-[15%] w-[380px] h-[380px] rounded-full bg-blue-500/4 dark:bg-blue-600/5 blur-[120px] animate-float-slow" />
+        <div className="absolute bottom-[25%] right-[8%] w-[480px] h-[480px] rounded-full bg-indigo-500/4 dark:bg-indigo-600/5 blur-[130px] animate-float-reverse" />
       </div>
 
-      <div className="w-full max-w-md bg-zinc-900/40 backdrop-blur-md border border-zinc-800/80 p-8 rounded-3xl shadow-xl z-10 transition-all duration-300">
+      <div className="w-full max-w-md bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md border border-slate-200/50 dark:border-zinc-800/80 p-8 rounded-3xl shadow-lg z-10 transition-all duration-300">
 
         {/* Icon + heading */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-4 shadow-md shadow-blue-500/10">
             <FileText className="text-white" size={24} />
           </div>
-          <h1 className="text-2xl font-bold text-zinc-50 mb-1 tracking-tight">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-zinc-50 mb-1 tracking-tight">
             Create an Account
           </h1>
-          <p className="text-sm text-zinc-400">Get started with Invoice Generator</p>
+          <p className="text-sm text-slate-500 dark:text-zinc-400">Get started with InvoiceAI</p>
         </div>
 
         {/* Form */}
@@ -186,12 +193,12 @@ const SignUp = () => {
 
           {/* Full Name */}
           <div>
-            <label className="block text-sm font-semibold text-zinc-350 mb-1.5">
+            <label className="block text-sm font-semibold text-slate-700 dark:text-zinc-305 mb-1.5">
               Full Name
             </label>
             <div className="relative">
               <User
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-550"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-550"
                 size={16}
               />
               <input
@@ -202,10 +209,10 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder="Enter your full name"
-                className={`w-full pl-10 pr-4 py-3 text-sm border rounded-xl bg-zinc-950/40 text-zinc-100
-                  placeholder-zinc-600 outline-none transition-all
+                className={`w-full pl-10 pr-4 py-3 text-sm border rounded-xl bg-white/40 dark:bg-zinc-950/40 text-slate-900 dark:text-zinc-100
+                  placeholder-slate-400 dark:placeholder-zinc-600 outline-none transition-all
                   focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10
-                  ${fieldErrors.name && touched.name ? "border-red-400" : "border-zinc-800"}`}
+                  ${fieldErrors.name && touched.name ? "border-red-400" : "border-slate-200/80 dark:border-zinc-800"}`}
               />
             </div>
             {fieldErrors.name && touched.name && (
@@ -215,12 +222,12 @@ const SignUp = () => {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-semibold text-zinc-350 mb-1.5">
+            <label className="block text-sm font-semibold text-slate-700 dark:text-zinc-305 mb-1.5">
               Email
             </label>
             <div className="relative">
               <Mail
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-550"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-550"
                 size={16}
               />
               <input
@@ -231,10 +238,10 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder="Enter your email"
-                className={`w-full pl-10 pr-4 py-3 text-sm border rounded-xl bg-zinc-950/40 text-zinc-100
-                  placeholder-zinc-600 outline-none transition-all
+                className={`w-full pl-10 pr-4 py-3 text-sm border rounded-xl bg-white/40 dark:bg-zinc-950/40 text-slate-900 dark:text-zinc-100
+                  placeholder-slate-400 dark:placeholder-zinc-600 outline-none transition-all
                   focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10
-                  ${fieldErrors.email && touched.email ? "border-red-400" : "border-zinc-800"}`}
+                  ${fieldErrors.email && touched.email ? "border-red-400" : "border-slate-200/80 dark:border-zinc-800"}`}
               />
             </div>
             {fieldErrors.email && touched.email && (
@@ -244,12 +251,12 @@ const SignUp = () => {
 
           {/* Password */}
           <div>
-            <label className="block text-sm font-semibold text-zinc-350 mb-1.5">
+            <label className="block text-sm font-semibold text-slate-700 dark:text-zinc-305 mb-1.5">
               Password
             </label>
             <div className="relative">
               <Lock
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-550"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-550"
                 size={16}
               />
               <input
@@ -260,15 +267,15 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder="Enter your password"
-                className={`w-full pl-10 pr-10 py-3 text-sm border rounded-xl bg-zinc-950/40 text-zinc-100
-                  placeholder-zinc-600 outline-none transition-all
+                className={`w-full pl-10 pr-10 py-3 text-sm border rounded-xl bg-white/40 dark:bg-zinc-950/40 text-slate-900 dark:text-zinc-100
+                  placeholder-slate-400 dark:placeholder-zinc-600 outline-none transition-all
                   focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10
-                  ${fieldErrors.password && touched.password ? "border-red-400" : "border-zinc-800"}`}
+                  ${fieldErrors.password && touched.password ? "border-red-400" : "border-slate-200/80 dark:border-zinc-800"}`}
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-405 hover:text-zinc-300"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-400 hover:text-slate-600 dark:hover:text-zinc-200"
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
@@ -280,12 +287,12 @@ const SignUp = () => {
 
           {/* Confirm Password */}
           <div>
-            <label className="block text-sm font-semibold text-zinc-350 mb-1.5">
+            <label className="block text-sm font-semibold text-slate-700 dark:text-zinc-350 mb-1.5">
               Confirm Password
             </label>
             <div className="relative">
               <Lock
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-550"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-550"
                 size={16}
               />
               <input
@@ -296,15 +303,15 @@ const SignUp = () => {
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 placeholder="Re-enter your password"
-                className={`w-full pl-10 pr-10 py-3 text-sm border rounded-xl bg-zinc-950/40 text-zinc-100
-                  placeholder-zinc-650 outline-none transition-all
+                className={`w-full pl-10 pr-10 py-3 text-sm border rounded-xl bg-white/40 dark:bg-zinc-950/40 text-slate-900 dark:text-zinc-100
+                  placeholder-slate-400 dark:placeholder-zinc-650 outline-none transition-all
                   focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10
-                  ${fieldErrors.confirmPassword && touched.confirmPassword ? "border-red-400" : "border-zinc-800"}`}
+                  ${fieldErrors.confirmPassword && touched.confirmPassword ? "border-red-400" : "border-slate-200/80 dark:border-zinc-800"}`}
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-405 hover:text-zinc-300"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-400 hover:text-slate-600 dark:hover:text-zinc-200"
               >
                 {showConfirmPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
@@ -324,33 +331,33 @@ const SignUp = () => {
                 setAgreedToTerms(e.target.checked);
                 if (e.target.checked) setError("");
               }}
-              className="w-4.5 h-4.5 rounded border-zinc-800 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer mt-0.5"
+              className="w-4.5 h-4.5 rounded border-slate-200 dark:border-zinc-800 text-blue-600 focus:ring-blue-500 focus:ring-offset-0 cursor-pointer mt-0.5"
             />
-            <label htmlFor="terms" className="text-sm text-zinc-400 cursor-pointer leading-tight select-none">
+            <label htmlFor="terms" className="text-sm text-slate-500 dark:text-zinc-400 cursor-pointer leading-tight select-none font-medium">
               I agree to the{" "}
-              <Link to="/terms" className="font-bold text-zinc-200 hover:underline hover:text-blue-400 transition-colors">
+              <Link to="/terms" className="font-bold text-slate-800 dark:text-zinc-250 hover:underline hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                 Terms of Service
               </Link>{" "}
               and{" "}
-              <Link to="/privacy" className="font-bold text-zinc-200 hover:underline hover:text-blue-400 transition-colors">
+              <Link to="/privacy" className="font-bold text-slate-800 dark:text-zinc-250 hover:underline hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
                 Privacy Policy
               </Link>
             </label>
           </div>
 
           {success && (
-            <p className="text-green-400 text-sm text-center font-medium">{success}</p>
+            <p className="text-green-500 dark:text-green-400 text-sm text-center font-medium">{success}</p>
           )}
 
           {error && (
-            <p className="text-red-500 text-sm text-center font-medium">{error}</p>
+            <p className="text-red-500 dark:text-red-400 text-sm text-center font-medium">{error}</p>
           )}
 
           {/* Submit */}
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3.5 rounded-xl text-sm font-semibold text-white bg-blue-500 hover:bg-blue-600 shadow-md shadow-blue-500/10
+            className="w-full py-3.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-650/10
               flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer disabled:opacity-60 mt-2"
           >
             {isLoading ? (
@@ -362,10 +369,10 @@ const SignUp = () => {
         </form>
 
         {/* Login link */}
-        <div className="border-t border-zinc-800 mt-6 pt-5 text-center">
-          <p className="text-sm text-zinc-400">
+        <div className="border-t border-slate-150 dark:border-zinc-800 mt-6 pt-5 text-center">
+          <p className="text-sm text-slate-500 dark:text-zinc-400">
             Already have an account?{" "}
-            <Link to="/login" className="font-bold text-zinc-200 hover:underline hover:text-blue-400 transition-colors">
+            <Link to="/login" className="font-bold text-slate-800 dark:text-zinc-250 hover:underline hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
               Sign in
             </Link>
           </p>

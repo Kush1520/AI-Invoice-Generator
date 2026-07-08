@@ -11,14 +11,14 @@ const FaqItem = ({ faq, isOpen, onClick }) => {
 
   return (
     <div className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-      isOpen ? 'border-zinc-700 shadow-sm' : 'border-zinc-800/80'
+      isOpen ? 'border-slate-300 dark:border-zinc-700 shadow-sm' : 'border-slate-200/60 dark:border-zinc-800/80'
     }`}>
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between p-6 bg-zinc-900/40 hover:bg-zinc-900/80 backdrop-blur-md cursor-pointer transition-colors duration-300"
+        className="w-full flex items-center justify-between p-6 bg-white/60 dark:bg-zinc-900/40 hover:bg-slate-50 dark:hover:bg-zinc-900/80 backdrop-blur-md cursor-pointer transition-colors duration-300"
       >
         <span className={`text-base font-semibold text-left pr-4 transition-colors duration-300 ${
-          isOpen ? 'text-zinc-100' : 'text-zinc-400'
+          isOpen ? 'text-slate-900 dark:text-zinc-100' : 'text-slate-700 dark:text-zinc-400'
         }`}>
           {faq.question}
         </span>
@@ -39,11 +39,11 @@ const FaqItem = ({ faq, isOpen, onClick }) => {
       {/* Animated answer panel */}
       <div
         style={{ height, transition: 'height 0.3s ease' }}
-        className="overflow-hidden bg-zinc-900/20 backdrop-blur-md"
+        className="overflow-hidden bg-white/40 dark:bg-zinc-900/20 backdrop-blur-md"
       >
         <div
           ref={answerRef}
-          className="px-6 pb-6 text-zinc-450 leading-relaxed border-t border-zinc-800/80 pt-4 text-sm sm:text-base"
+          className="px-6 pb-6 text-slate-600 dark:text-zinc-350 leading-relaxed border-t border-slate-150 dark:border-zinc-800/80 pt-4 text-sm sm:text-base"
         >
           {faq.answer}
         </div>
@@ -63,10 +63,10 @@ const Faqs = () => {
     <section id="faq" className="py-20 lg:py-28 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-50 mb-4 capitalize">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-zinc-50 mb-4 capitalize tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+          <p className="text-lg text-slate-500 dark:text-zinc-400 max-w-2xl mx-auto">
             Everything you need to know about the product and billing.
           </p>
         </div>
