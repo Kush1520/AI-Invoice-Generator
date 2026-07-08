@@ -69,66 +69,7 @@ A full-stack invoice management platform that uses AI to turn plain-English desc
  
 ---
  
-## Getting Started
  
-### Prerequisites
-- Node.js 18+
-- A MongoDB Atlas connection string
-- A [Groq API key](https://console.groq.com/keys)
-### 1. Clone the repo
-```bash
-git clone https://github.com/Kush1520/AI-Invoice-Generator.git
-cd AI-Invoice-Generator
-```
- 
-### 2. Backend setup
-```bash
-cd backend
-npm install
-```
- 
-Create a `.env` file inside `backend/`:
-```env
-PORT=8000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-GROQ_API_KEY=your_groq_api_key
-```
- 
-Run the backend:
-```bash
-nodemon server.js
-```
- 
-### 3. Frontend setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
- 
-The app should now be running locally, with the frontend on Vite's default port and the backend on `PORT` from your `.env`.
- 
----
- 
-## API Overview
- 
-| Method | Endpoint | Description | Auth |
-|---|---|---|---|
-| POST | `/api/auth/register` | Register a new user | — |
-| POST | `/api/auth/login` | Log in | — |
-| GET/PUT | `/api/auth/me` | Get / update profile | ✅ |
-| GET/POST | `/api/invoices` | List / create invoices | ✅ |
-| GET/PUT/DELETE | `/api/invoices/:id` | Get / update / delete an invoice | ✅ |
-| POST | `/api/ai/parse-text` | Parse plain text into a structured invoice | ✅ |
-| POST | `/api/ai/generate-reminder` | Generate an AI payment reminder email | ✅ |
-| GET | `/api/ai/dashboard-summary` | Get AI-generated dashboard insights | ✅ |
-| POST | `/api/ai/parse-recurring` | Parse plain text into a recurring schedule | ✅ |
-| GET/POST | `/api/recurring` | List / create recurring invoices | ✅ |
-| PUT | `/api/recurring/:id/pause` \| `/resume` \| `/cancel` | Manage a recurring invoice's state | ✅ |
-| DELETE | `/api/recurring/:id` | Delete a recurring invoice | ✅ |
- 
----
  
 ## Project Structure
  
@@ -151,11 +92,5 @@ AI-Powered-Invoice-Generator/
  
 ---
  
-## Roadmap
- 
-- [ ] Payment-risk scoring for overdue invoices
-- [ ] CORS restricted to production domain
-- [ ] httpOnly cookie-based auth (instead of localStorage JWT)
-- [ ] Natural-language invoice search/filtering
----
+
 
