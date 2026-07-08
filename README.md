@@ -12,7 +12,7 @@ Screenshots
 
 
 [DashBoard]
-<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/5ea8c61c-4e5e-43a1-ad34-c030dfeb76b6" />
+<img width="1200" height="700" alt="image" src="screenshots/dashboard.png" />
 
 
 [Create Invoice]
@@ -108,7 +108,7 @@ nodemon server.js
  
 ### 3. Frontend setup
 ```bash
-cd frontend/invoice-generator
+cd frontend
 npm install
 npm run dev
 ```
@@ -148,12 +148,11 @@ AI-Powered-Invoice-Generator/
 │   ├── routes/             # Express routers
 │   └── server.js
 └── frontend/
-    └── invoice-generator/
-        ├── src/
-        │   ├── components/  # Reusable UI components
-        │   ├── pages/         # Route-level pages
-        │   └── utils/          # Axios instance, API paths, helpers
-        └── vercel.json          # SPA routing rewrite for Vercel
+    ├── src/
+    │   ├── components/  # Reusable UI components
+    │   ├── pages/         # Route-level pages
+    │   └── utils/          # Axios instance, API paths, helpers
+    └── vercel.json          # SPA routing rewrite for Vercel
 ```
  
 ---
